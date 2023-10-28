@@ -42,3 +42,12 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(response.text.encode('utf-8'))
         return
+
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers',
+                         'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version')
+        self.end_headers()
+        return
