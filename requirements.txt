@@ -1,2 +1,4 @@
 requests==2.26.0
 python-environ==0.4.54
+pysftp==0.2.9
+pytz==2023.3.post1
