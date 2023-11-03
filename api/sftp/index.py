@@ -122,19 +122,19 @@ class handler(BaseHTTPRequestHandler):
                     writer.writerow(
                         {'field_name': 'SALES_CHANNEL', 'field_data': "Service"})
                     writer.writerow(
-                        {'field_name': 'BILL_TO_ADDRESS1', 'field_data': f"{data.get('Address 1', '')}"})
+                        {'field_name': 'BILL_TO_ADDRESS1', 'field_data': f"{data.get('Billing Address 1', '')}"})
                     writer.writerow(
-                        {'field_name': 'BILL_TO_ADDRESS2', 'field_data': f"{data.get('Address 2', '')}"})
+                        {'field_name': 'BILL_TO_ADDRESS2', 'field_data': f"{data.get('Billing Address 2', '')}"})
                     writer.writerow(
                         {'field_name': 'BILL_TO_ADDRESS3', 'field_data': ""})
                     writer.writerow(
                         {'field_name': 'BILL_TO_ADDRESS4', 'field_data': ""})
                     writer.writerow(
-                        {'field_name': 'BILL_TO_CITY', 'field_data': f"{data.get('City', '')}"})
+                        {'field_name': 'BILL_TO_CITY', 'field_data': f"{data.get('Billing City', '')}"})
                     writer.writerow(
-                        {'field_name': 'BILL_TO_STATE', 'field_data': f"{data.get('State', '')}"})
+                        {'field_name': 'BILL_TO_STATE', 'field_data': f"{data.get('Billing State', '')}"})
                     writer.writerow(
-                        {'field_name': 'BILL_TO_POSTAL_CODE', 'field_data': f"{data.get('Zip Code', '')}"})
+                        {'field_name': 'BILL_TO_POSTAL_CODE', 'field_data': f"{data.get('Billing Zip Code', '')}"})
                     writer.writerow(
                         {'field_name': 'BILL_TO_COUNTY', 'field_data': ""})
                     writer.writerow(
@@ -174,9 +174,9 @@ class handler(BaseHTTPRequestHandler):
                     writer.writerow(
                         {'field_name': 'PERSON_EMAIL_ADDRESS', 'field_data': f"{user.get('email', '')}"})
                     writer.writerow(
-                        {'field_name': 'CARD_HOLDER_PARTY_NAME', 'field_data': f"{user.get('name', '')}"})
+                        {'field_name': 'CARD_HOLDER_PARTY_NAME', 'field_data': f"{data.get('Billing Full Name', '')}"})
                     writer.writerow(
-                        {'field_name': 'TOKENIZED_CARD_NUMBER', 'field_data': f"{data.get('Credit Card Number', '')}"})
+                        {'field_name': 'TOKENIZED_CARD_NUMBER', 'field_data': f"{data.get('CC Token', '')}"})
                     writer.writerow(
                         {'field_name': 'CARD_EXPIRATION_DATE', 'field_data': f"{data.get('Expires', '')}"})
                     writer.writerow(
@@ -200,15 +200,15 @@ class handler(BaseHTTPRequestHandler):
                     writer.writerow(
                         {'field_name': 'ORACLE_INV_ITEM_NAME', 'field_data': ""})
                     writer.writerow({'field_name': 'BIKE_YEAR',
-                                    'field_data': f"{data.get('Behicle Year', '')}"})
+                                    'field_data': f"{data.get('Vehicle Year', '')}"})
                     writer.writerow(
-                        {'field_name': 'BIKE_MFG_BY', 'field_data': f"{data.get('Behicle Manufacturer', '')}"})
+                        {'field_name': 'BIKE_MFG_BY', 'field_data': f"{data.get('Vehicle Manufacturer', '') or data.get('Vehicle Make', '')}"})
                     writer.writerow({'field_name': 'BIKE_MODEL',
-                                    'field_data': f"{data.get('Behicle Model', '')}"})
+                                    'field_data': f"{data.get('Vehicle Model', '')}"})
                     writer.writerow(
-                        {'field_name': 'SERIAL_NUMBER', 'field_data': f"{data.get('sn', '')}"})
+                        {'field_name': 'SERIAL_NUMBER', 'field_data': f"{data.get('Serial Number', '') or data.get('Part Number', '')}"})
                     writer.writerow(
-                        {'field_name': 'RIDER_WEIGHT', 'field_data': f"{data.get('Rider Weight Unit', '')}"})
+                        {'field_name': 'RIDER_WEIGHT', 'field_data': f"{data.get('Rider Weight', '')} {data.get('Rider Weight Unit', '')}"})
                     writer.writerow(
                         {'field_name': 'SERVICE_PRIORITY', 'field_data': ""})
                     writer.writerow(
@@ -218,9 +218,9 @@ class handler(BaseHTTPRequestHandler):
                     writer.writerow(
                         {'field_name': 'CRANKARM_SIDE', 'field_data': ""})
                     writer.writerow(
-                        {'field_name': 'SEATPOST_DIAMETER', 'field_data': ""})
+                        {'field_name': 'SEATPOST_DIAMETER', 'field_data': f"{data.get('Seatpost Diameter', '')}"})
                     writer.writerow(
-                        {'field_name': 'SEATPOST_DROPPER_TRAVEL', 'field_data': ""})
+                        {'field_name': 'SEATPOST_DROPPER_TRAVEL', 'field_data': f"{data.get('Dropper Travel', '')}"})
                     writer.writerow(
                         {'field_name': 'SPINDLE_DIAMETER', 'field_data': ""})
                     writer.writerow(
